@@ -1,0 +1,61 @@
+<% if user.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(user.errors.count, "error") %>
+      prohibited this user from being saved:
+    </h2>
+
+    <ul>
+    <% user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<!--
+<form action="/users" method="post">
+  <label for="username">User name:</label>
+  <input type="text" name="user[username]">
+  <br>
+  <label for="email">email:</label>
+  <input type="text" name="user[email]">
+  <br>
+  <label for="password">Password</label>
+  <input type="password" name="user[password]">
+  <br>
+  <button type="submit">Submit</button>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+</form>
+-->
+
+<%#= form_tag('/users', method: :post) do %>
+
+  <%#= label_tag 'username', 'User:' %>
+  <%#= text_field_tag "username" %>
+
+  <%#= label_tag 'email', 'Email:' %>
+  <%#= text_field_tag "email" %>
+
+  <%#= label_tag 'password', 'Password:' %>
+  <%#= text_field_tag "password" %>
+
+  <!-- button type="submit">Submit</button -->
+<%# end %>
+
+<%= form_with(model: user, local: true) do |f| %> 
+
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.label :password_confirmation, "Confirmation" %>
+  <%= f.password_field :password_confirmation %>
+
+  <%= f.submit "Create my account" %>
+<% end %>
