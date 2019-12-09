@@ -29,6 +29,20 @@
 </form>
 -->
 
+<%#= form_tag('/users', method: :post) do %>
+
+  <%#= label_tag 'username', 'User:' %>
+  <%#= text_field_tag "username" %>
+
+  <%#= label_tag 'email', 'Email:' %>
+  <%#= text_field_tag "email" %>
+
+  <%#= label_tag 'password', 'Password:' %>
+  <%#= text_field_tag "password" %>
+
+  <!-- button type="submit">Submit</button -->
+<%# end %>
+
 <%= form_with(model: user, local: true) do |f| %> 
 
   <%= f.label :username %>
