@@ -34,4 +34,4 @@ No live version for this project.
 
 * Collaborators
   [Alisson Peres](https://github.com/alissonperes)
-  [David Elí](lhttps://github.com/davitomix)
+  [David Elí](https://github.com/davitomix)
