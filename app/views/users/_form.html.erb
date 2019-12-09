@@ -13,6 +13,22 @@
   </div>
 <% end %>
 
+<!--
+<form action="/users" method="post">
+  <label for="username">User name:</label>
+  <input type="text" name="user[username]">
+  <br>
+  <label for="email">email:</label>
+  <input type="text" name="user[email]">
+  <br>
+  <label for="password">Password</label>
+  <input type="password" name="user[password]">
+  <br>
+  <button type="submit">Submit</button>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+</form>
+-->
+
 <%= form_with(model: user, local: true) do |f| %> 
 
   <%= f.label :username %>
